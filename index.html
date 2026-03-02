@@ -17,11 +17,22 @@
 	function initEmbeddedMessaging() {
 		try {
 			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+			window.addEventListener("onEmbeddedMessagingReady", e => {
+				embeddedservice_bootstrap.prechatAPI.setVisiblePrechatFields({
+					
+					"Member_Id": {
+						"value": "Testing",
+						"isEditableByEndUser": true
+					}
+				});
+			});
+			
+			
 
 			embeddedservice_bootstrap.init(
 				'00DVZ0000008vab',
-				'test',
-				'https://club-os--partial.sandbox.my.site.com/ESWtest1772050210288',
+				'test_github',
+				'https://club-os--partial.sandbox.my.site.com/ESWtestgithub1772477274513',
 				{
 					scrt2URL: 'https://club-os--partial.sandbox.my.salesforce-scrt.com'
 				}
